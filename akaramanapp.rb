@@ -5,11 +5,11 @@
 class Akaramanapp < Formula
   desc ""
   homepage "https://github.com/akaramanapp/dev-tools"
-  version "0.8"
+  version "0.9"
 
   on_macos do
-    url "https://github.com/akaramanapp/dev-tools/releases/download/v0.8/dev-tools_0.8_darwin_all.tar.gz"
-    sha256 "73ce5678913f5abd5406a7e4d417821425c964033caeb6f7d84065914f0e6554"
+    url "https://github.com/akaramanapp/dev-tools/releases/download/v0.9/dev-tools_0.9_darwin_all.tar.gz"
+    sha256 "b85c5775d2839025888b697b0db27e7fa92fbbac8be4a99457edf31679247ff4"
 
     def install
       bin.install "dev-tools"
@@ -17,17 +17,17 @@ class Akaramanapp < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akaramanapp/dev-tools/releases/download/v0.8/dev-tools_0.8_linux_arm64.tar.gz"
-      sha256 "8a4953ba9c17a598158a46d57979923bbd7ec4c445def65d2210b44edfeb4d38"
+    if Hardware::CPU.intel?
+      url "https://github.com/akaramanapp/dev-tools/releases/download/v0.9/dev-tools_0.9_linux_amd64.tar.gz"
+      sha256 "a21143e1bec9e625e790131d611227d8a500033792581592f72499d07227ade7"
 
       def install
         bin.install "akaramanapp"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/akaramanapp/dev-tools/releases/download/v0.8/dev-tools_0.8_linux_amd64.tar.gz"
-      sha256 "1bd1a84bf7fcfe3804042ea549e0fe89c2dd9cac9f39c6197963d026dda01c6c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/akaramanapp/dev-tools/releases/download/v0.9/dev-tools_0.9_linux_arm64.tar.gz"
+      sha256 "61d22af1b559b2642557f7f6232b679d7db4793b2b1e7bca089705b8101f5164"
 
       def install
         bin.install "akaramanapp"
